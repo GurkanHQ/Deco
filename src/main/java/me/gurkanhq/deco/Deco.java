@@ -22,6 +22,9 @@ public final class Deco extends JavaPlugin {
         // Commands
         getCommand("god").setExecutor(new God());
         getCommand("feed").setExecutor(new Feed());
+        // Config
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
 
     }
 

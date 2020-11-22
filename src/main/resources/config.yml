@@ -1,0 +1,27 @@
+## Deco Configuration
+
+## General
+permissionError: 'You do not have permission to run this command.' # Color: Red
+missingArgs: 'Missing arguments.' # Color: Red
+
+### Death location message
+deathLocationMsg: 'your death location is:' # Color: Aqua
+
+### Join/Leave messages
+joinMSG: 'Welcome to the server,' # Color: Aqua
+leaveMSG: 'Hope we see you sometime soon,' # Color: Aqua
+
+### Feed Messages
+notHungryMSG: 'You are already at max food level.' # Color: Red
+fedMSG: 'You are now at max food level.' # Color: Green
+
+
+### God Messages
+alreadyInvulnerable: 'You are already invulnerable' # Color: Red
+nowInvulnerable: 'You are now invulnerable.' # Color: Green
+
+## Kill Messages
+killSelf: 'You just killed yourself.' # Color: Aqua
+killTargetNull: 'The targeted player does not exist.' # Color: Red
+targetKillMessage: 'You just got killed by' # Color: Red
+playerKilledTarget: 'is now killed by you'

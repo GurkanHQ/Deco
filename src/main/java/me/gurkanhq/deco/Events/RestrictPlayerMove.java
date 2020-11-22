@@ -13,7 +13,7 @@ public class RestrictPlayerMove implements Listener {
         if(player.hasPermission("deco.restrictMove")) {
             event.setCancelled(true);
         } else {
-            event.setCancelled(false);
+            return;
         }
     }
 
