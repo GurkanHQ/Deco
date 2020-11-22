@@ -13,7 +13,7 @@ public final class Deco extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getLogger().info("Welcome to Deco!");
+        getLogger().info("[Deco] Welcome to Deco!");
         // Events
         getServer().getPluginManager().registerEvents(new OnDeath(), this);
         getServer().getPluginManager().registerEvents(new OnPlayerJoin(), this);
@@ -31,6 +31,6 @@ public final class Deco extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        getLogger().info("Deco is shutting down.");
+        getLogger().info("[Deco] Shutting down.");
     }
 }
