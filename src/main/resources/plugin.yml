@@ -1,0 +1,12 @@
+name: Deco
+version: @version@
+main: me.gurkanhq.deco.Deco
+api-version: 1.16
+authors: [ ThePigStupo, kyleyuen ]
+commands:
+  god:
+    description: Makes you invulnerable to attacks.
+    aliases: [invincible, godmode]
+  feed:
+    description: Hunger no longer.
+    aliases: [foodplease]
