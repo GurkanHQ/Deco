@@ -23,25 +23,34 @@ public class Kill implements CommandExecutor {
         String killTargetNull = plugin.getConfig().getString("killTargetNull");
         String targetKillMessage = plugin.getConfig().getString("targetKillMessage");
         String playerKilledTarget = plugin.getConfig().getString("playerKilledTarget");
+        String permissionError = plugin.getConfig().getString("permissionError");
         String senderDisplayName = player.getDisplayName();
         String targetDisplayName = target.getDisplayName();
 
         if (sender instanceof Player) {
 
+            if (player.hasPermission("deco.kill")) {
 
-            if (args.length == 0) {
-                player.sendMessage(ChatColor.AQUA + killSelf);
-                player.setHealth(0);
-            } else {
-
-                if (target instanceof Player) {
-                    target.sendMessage(ChatColor.RED + targetKillMessage + " " + senderDisplayName);
-                    target.setHealth(0);
-                    player.sendMessage(ChatColor.RED + targetDisplayName + " " + playerKilledTarget);
+                if (args.length == 0) {
+                    player.sendMessage(ChatColor.AQUA + killSelf);
+                    player.setHealth(0);
                 } else {
-                    player.sendMessage(ChatColor.RED + killTargetNull);
+
+                    if (target instanceof Player) {
+                        target.sendMessage(ChatColor.RED + targetKillMessage + " " + senderDisplayName);
+                        target.setHealth(0);
+                        player.sendMessage(ChatColor.RED + targetDisplayName + " " + playerKilledTarget);
+                    } else {
+                        player.sendMessage(ChatColor.RED + killTargetNull);
+                    }
                 }
+
+            } else {
+                player.sendMessage(permissionError);
             }
+
+
+
 
         }
 

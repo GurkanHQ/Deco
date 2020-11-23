@@ -2,6 +2,8 @@ package me.gurkanhq.deco;
 
 import me.gurkanhq.deco.Commands.Feed;
 import me.gurkanhq.deco.Commands.God;
+import me.gurkanhq.deco.Commands.Kill;
+import me.gurkanhq.deco.Commands.VaultCommand;
 import me.gurkanhq.deco.Events.OnDeath;
 import me.gurkanhq.deco.Events.OnPlayerJoin;
 import me.gurkanhq.deco.Events.OnPlayerLeave;
@@ -22,6 +24,8 @@ public final class Deco extends JavaPlugin {
         // Commands
         getCommand("god").setExecutor(new God());
         getCommand("feed").setExecutor(new Feed());
+        getCommand("kill").setExecutor(new Kill());
+        getCommand("vault").setExecutor(new VaultCommand());
         // Config
         getConfig().options().copyDefaults();
         saveDefaultConfig();

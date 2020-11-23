@@ -17,28 +17,46 @@ public class God implements CommandExecutor {
 
         String alreadyInvulnerable = plugin.getConfig().getString("alreadyInvulnerable");
         String nowInvulnerable = plugin.getConfig().getString("nowInvulnerable");
+        String notInvulnerable = plugin.getConfig().getString("notInvulnerable");
+        String nowNotInvulnerable = plugin.getConfig().getString("nowNotInvulnerable");
         String permissionError = plugin.getConfig().getString("permissionError");
+        Player player = (Player) sender;
 
         if (sender instanceof Player) {
 
-            Player player = (Player) sender;
 
-            if (player.hasPermission("deco.god")) {
-                if (player.isInvulnerable()) {
-                    player.sendMessage(ChatColor.RED + alreadyInvulnerable);
-                    return false;
+            if (args[0].equals("on")) {
+
+                if (player.hasPermission("deco.god")) {
+                    if (player.isInvulnerable()) {
+                        player.sendMessage(ChatColor.RED + alreadyInvulnerable);
+                        return false;
+                    } else {
+                        player.sendMessage(ChatColor.GREEN + nowInvulnerable);
+                        player.setInvulnerable(true);
+                    }
                 } else {
-                    player.sendMessage(ChatColor.GREEN + nowInvulnerable);
-                    player.setInvulnerable(true);
+                    player.sendMessage(ChatColor.RED + permissionError);
                 }
-            } else {
-                player.sendMessage(ChatColor.RED + permissionError);
+
+            } else if (args[0].equals("off")) {
+                if (player.hasPermission("deco.god")) {
+                    if (player.isInvulnerable()) {
+                        player.sendMessage(ChatColor.RED + notInvulnerable);
+                        return false;
+                    } else {
+                        player.sendMessage(ChatColor.GREEN + nowNotInvulnerable);
+                        player.setInvulnerable(true);
+                    }
+                } else {
+                    player.sendMessage(ChatColor.RED + permissionError);
+                }
             }
 
-        } else {
+            } else {
             sender.sendMessage("Hey there console, you can't do that");
-        }
 
+            }
 
         return false;
     }
