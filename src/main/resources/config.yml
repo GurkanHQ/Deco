@@ -19,9 +19,14 @@ fedMSG: 'You are now at max food level.' # Color: Green
 ### God Messages
 alreadyInvulnerable: 'You are already invulnerable' # Color: Red
 nowInvulnerable: 'You are now invulnerable.' # Color: Green
+notInvulnerable: 'You are not invulnerable' # Color: Red
+nowNotInvulnerable: 'You are no longer invulnerable' # Color: Green
 
 ## Kill Messages
 killSelf: 'You just killed yourself.' # Color: Aqua
 killTargetNull: 'The targeted player does not exist.' # Color: Red
 targetKillMessage: 'You just got killed by' # Color: Red
 playerKilledTarget: 'is now killed by you'
+
+## Vault
+vaultName: 'Your vault'

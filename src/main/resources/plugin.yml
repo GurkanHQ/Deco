@@ -7,6 +7,16 @@ commands:
   god:
     description: Makes you invulnerable to attacks.
     aliases: [invincible, godmode]
+    permission: deco.god
   feed:
     description: Hunger no longer.
     aliases: [foodplease]
+    permission: deco.feed
+  kill:
+    description: die
+    aliases: [diepls]
+    permission: deco.kill
+  vault:
+    description: Opens a personal vault.
+    usage: /vault
+    permission: deco.vault
